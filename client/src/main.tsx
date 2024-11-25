@@ -1,9 +1,12 @@
 import { createRoot } from "react-dom/client";
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import App from "./App.tsx";
+import { Provider } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { store } from "./redux/store.ts";
+import "./styles/global.css";
 
 createRoot(document.getElementById("root")!).render(
-  <ChakraProvider value={defaultSystem}>
+  <Provider store={store}>
     <App />
-  </ChakraProvider>
+  </Provider>
 );
